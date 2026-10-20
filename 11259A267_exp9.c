@@ -3,8 +3,7 @@
 struct Node {
  int data;
  struct Node *left, *right;
-}
-struct Node *createNode(int val) {
+};struct Node *createNode(int val) {
  struct Node *newNode = (struct Node *) malloc(sizeof(struct Node));
  newNode->data = val;
  newNode->left = newNode->right = NULL;
@@ -43,8 +42,7 @@ void postorder(struct Node *root) {
 #define QMAX 100
 void levelorder(struct Node *root) {
  struct Node *queue[QMAX];
- int front = 0,
-if (root == NULL) {
+ int front = 0, rear = 0;if (root == NULL) {
  printf("Tree is empty.\n");
  return;
  }
@@ -76,7 +74,14 @@ int main() {
  switch (choice) {
  case 1:
  printf("In-order Traversal: ");
- inorder(root);case 3:
+ inorder(root);
+ printf("\n");
+ break;
+ case 2:
+ printf("Pre-order Traversal: ");
+ preorder(root);
+ printf("\n");
+ break;case 3:
  printf("Post-order Traversal: ");
  postorder(root);
  printf("\n");
